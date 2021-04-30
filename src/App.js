@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // commerce does all the backend
 import { commerce } from './lib/commerce';
 import { Products, Navbar, Cart } from './components';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -29,19 +30,26 @@ const App = () => {
     console.log(cart);
 
     return (
-        <div>
-            <Navbar
-                // pass total number of items in the cart after they were added
-                totalItems={cart.total_items}
-            />
-            {/* pass products as props */}
-            {/* <Products
-                products={products}
-                // inside the Product component to change what's in the Cart
-                onAddToCart={handleAddToCart}
-            /> */}
-            <Cart cart={cart} />
-        </div>
+        <Router>
+            <div>
+                <Navbar
+                    // pass total number of items in the cart after they were added
+                    totalItems={cart.total_items}
+                />
+                {/* switch between showing product or cart */}
+                <Switch>
+                    <Route exact path="/">
+                        {/* pass products as props */}
+                        <Products products={products}
+                            // inside the Product component to change what's in the Cart
+                            onAddToCart={handleAddToCart} />
+                    </Route>
+                    <Route exact path="/cart">
+                        <Cart cart={cart} />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     )
 }
 
