@@ -30,7 +30,10 @@ const App = () => {
 
     return (
         <div>
-            <Navbar />
+            <Navbar
+                // pass total number of items in the cart after they were added
+                totalItems={cart.total_items}
+            />
             {/* pass products as props */}
             <Products
                 products={products}
