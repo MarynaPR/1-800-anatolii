@@ -3,8 +3,8 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/Product';
 import useStyles from './styles';
 
-// pass products as props
-const Products = ({ products }) => {
+// pass products as props, add to cart reflected in props
+const Products = ({ products,onAddToCart }) => {
     const classes = useStyles();
 
     return (
@@ -14,7 +14,11 @@ const Products = ({ products }) => {
             <Grid container justify="center" spacing={4}>
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                        <Product product={product} />
+                        <Product
+                         product={product}
+                        //  pass the function to add products to cart into Product component
+                        onAddToCart={onAddToCart}
+                          />
                     </Grid>
                 ))}
             </Grid>

@@ -4,8 +4,8 @@ import { AddShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 // import classes from '*.module.css';
 
-//layout of one specific product
-const Product = ({ product }) => {
+//layout of one specific product/ add product to cart prop, then passed on Buttonclick below
+const Product = ({ product, onAddToCart }) => {
 
     const classes = useStyles();
     // check which properties each product has from commerce.js
@@ -30,7 +30,11 @@ const Product = ({ product }) => {
                     color="textSecondary" />
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
-                <IconButton area-label="Add to Cart">
+                <IconButton
+                    area-label="Add to Cart"
+                    // items added to the cart prop with id and always 1 as quantity
+                    onClick={() => onAddToCart(product.id, 1)}
+                >
                     <AddShoppingCart />
                 </IconButton>
             </CardActions>
