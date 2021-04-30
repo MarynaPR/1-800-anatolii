@@ -76,3 +76,5 @@ rafce
 ## Resources
 * [logo builder](https://www.designevo.com/logo-maker/)
 * [commerse.js](https://dashboard.chec.io)
+* [react-router-dom](https://reactrouter.com/)
+* [react-hook-form](https://react-hook-form.com)

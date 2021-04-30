@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // commerce does all the backend
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -64,8 +64,11 @@ const App = () => {
                         <Cart cart={cart}
                             handleUpdateCartQty={handleUpdateCartQty}
                             handleRemoveFromCart={handleRemoveFromCart}
-                            handleEmptyCart={handleEmptyCart}
-                        />
+                            handleEmptyCart={handleEmptyCart} />
+                    </Route>
+                    <Route exact path="/checkout">
+                        <Checkout cart={cart} />
+
                     </Route>
                 </Switch>
             </div>
@@ -74,4 +77,3 @@ const App = () => {
 }
 
 export default App;
-
