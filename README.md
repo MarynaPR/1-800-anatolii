@@ -72,3 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # install
 npm install @material-ui/core @material-ui/icons @chec/commerse.js @stripe/react-stripe-js @stripe/stripe-js react-router-dom react-hook-form
 rafce
+
+## Resources
+* [logo builder](https://www.designevo.com/logo-maker/)
