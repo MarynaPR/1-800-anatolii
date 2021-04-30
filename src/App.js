@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // commerce does all the backend
 import { commerce } from './lib/commerce';
-import { Products, Navbar } from './components';
+import { Products, Navbar, Cart } from './components';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -35,11 +35,12 @@ const App = () => {
                 totalItems={cart.total_items}
             />
             {/* pass products as props */}
-            <Products
+            {/* <Products
                 products={products}
                 // inside the Product component to change what's in the Cart
                 onAddToCart={handleAddToCart}
-            />
+            /> */}
+            <Cart cart={cart} />
         </div>
     )
 }
