@@ -19,6 +19,7 @@ const Navbar = ({ totalItems }) => {
                         Anatolii.js
                     </Typography>
                     <div className={classes.grow} />
+                    {/* shopping cart shows in Nav, once items added to shoping cart it doesn't show in Nav */}
                     {location.pathname === '/' && (
                         <div className={classes.button}>
                             <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
