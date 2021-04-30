@@ -78,3 +78,4 @@ rafce
 * [commerse.js](https://dashboard.chec.io)
 * [react-router-dom](https://reactrouter.com/)
 * [react-hook-form](https://react-hook-form.com)
+* [react stripe](https://stripe.com/docs/stripe-js/react)

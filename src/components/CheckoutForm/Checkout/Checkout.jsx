@@ -10,7 +10,7 @@ const steps = ['Shipping address', 'Payment details'];
 const Checkout = ({ cart }) => {
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null);
-    const [shippingData, setShippingData] = useState({};)
+    const [shippingData, setShippingData] = useState({});
     const classes = useStyles();
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Checkout = ({ cart }) => {
     const Form = () => activeStep === 0
         // pass a prop for checkout
         ? <AddressForm checkoutToken={checkoutToken} next={next} /> //first step
-        : <PaymentForm /> //secons step
+        : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} /> //secons step
 
     return (
         <>
