@@ -79,3 +79,5 @@ rafce
 * [react-router-dom](https://reactrouter.com/)
 * [react-hook-form](https://react-hook-form.com)
 * [react stripe](https://stripe.com/docs/stripe-js/react)
+* `npm run build` at the end of code
+* [netlify](https://app.netlify.com/sites/boring-poincare-ab77a6/overview)

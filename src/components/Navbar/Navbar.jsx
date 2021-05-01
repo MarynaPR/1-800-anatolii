@@ -16,7 +16,7 @@ const Navbar = ({ totalItems }) => {
                 <Toolbar>
                     <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
                         <img src={logo} alt="Anatolii.js" height='25px' className={classes.image} />
-                        Anatolii.js
+                        1-800-ANATOLII
                     </Typography>
                     <div className={classes.grow} />
                     {/* shopping cart shows in Nav, once items added to shoping cart it doesn't show in Nav */}
