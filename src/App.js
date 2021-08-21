@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 // commerce does all the backend
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout } from './components';
+import { Products, Navbar, Cart, Checkout, Header } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
+
+    const [pages] = useState([
+        { name: "about" },
+        { name: "blog" },
+        { name: "contact" },
+    ])
+    const [currentPage, setCurrentPage] = useState(pages[0]);
     const [products, setProducts] = useState([]);
     // useState to add cart functionality
     const [cart, setCart] = useState({});
@@ -67,10 +74,15 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Navbar
-                    // pass total number of items in the cart after they were added
-                    totalItems={cart.total_items}
-                />
+                <Header>
+                    <Navbar
+                        // pass total number of items in the cart after they were added
+                        totalItems={cart.total_items}
+                        pages={pages}
+                        setCurrentPage={setCurrentPage}
+                        currentPage={currentPage}
+                    />
+                </Header>
                 {/* switch between showing product or cart */}
                 <Switch>
                     <Route exact path="/">
