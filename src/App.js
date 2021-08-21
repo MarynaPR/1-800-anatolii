@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // commerce does all the backend
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout, Header } from './components';
+import { Products, Navbar, Cart, Checkout, Header, Main } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -74,17 +74,23 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Header>
+                <Header
+                    pages={pages}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+
+                >
                     <Navbar
                         // pass total number of items in the cart after they were added
                         totalItems={cart.total_items}
-                        pages={pages}
-                        setCurrentPage={setCurrentPage}
-                        currentPage={currentPage}
+
                     />
                 </Header>
                 {/* switch between showing product or cart */}
                 <Switch>
+                    <Route exact path="/blog">
+                        <Main currentPage={currentPage}></Main>
+                    </Route>
                     <Route exact path="/">
                         {/* pass products as props */}
                         <Products products={products}
